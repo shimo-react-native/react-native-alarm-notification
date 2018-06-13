@@ -121,10 +121,10 @@ public class ANHelper {
             int smallIconResId;
             String smallIcon = bundle.getString("small_icon");
             if (smallIcon != null) {
-                smallIconResId = res.getIdentifier(smallIcon, "mipmap", packageName);
+                smallIconResId = res.getIdentifier(smallIcon, "drawable", packageName);
             }
             else {
-                smallIconResId = res.getIdentifier("ic_launcher", "mipmap", packageName);
+                smallIconResId = res.getIdentifier("ic_launcher", "drawable", packageName);
             }
 
             Intent resultIntent = new Intent(mContext, intentClass);
@@ -149,7 +149,7 @@ public class ANHelper {
             //large icon
             String largeIcon = bundle.getString("large_icon");
             if(largeIcon != null && android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP){
-                int largeIconResId = res.getIdentifier(largeIcon, "mipmap", packageName);
+                int largeIconResId = res.getIdentifier(largeIcon, "drawable", packageName);
                 Bitmap largeIconBitmap = BitmapFactory.decodeResource(res, largeIconResId);
 
                 if (largeIconResId != 0) {
